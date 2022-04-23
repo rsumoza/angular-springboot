@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Ver</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas">
+        <td>{{persona.id}}</td>
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.apellido}}</td>
+        <td><button class="btn btn-outline-primary" routerLink="/obtener/{{persona.id}}"><i class="fa-solid fa-eye"></i> Ver</button></td>
+        <td><button class="btn btn-outline-warning" routerLink="/actualizar/{{persona.id}}"><i class="fa-solid fa-pen-to-square"></i> Editar</button></td>
+        <td><button class="btn btn-outline-danger" (click)="borrar(persona.id)"><i class="fa-solid fa-trash-can"></i> Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
